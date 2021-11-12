@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TestController
@@ -16,10 +18,16 @@ class TestController
     }
 
     /**
-     * @Route("/test", name ="test");
+     * @Route("/test/{age<\d+>?0}", name ="test", host="localhost", methods={"GET", "POST"},
+     * schemes={"http","https"});
      */
-    public function test()
+    public function test(Request $request, $age)
     {
-        dd("Hello from test");
+        // $age = $request->attributes->get("age");
+
+        dump($request);
+        // dd("Hello from test $age");
+
+        return  new Response("Vous avez $age ans");
     }
 }

@@ -1,0 +1,7 @@
+# test:
+#   path: /test/{age?0}
+#   controller: App\Controller\TestController::test
+#   # defaults:
+#   #   age: 33
+#   schemes: ["http", "https"]
+#   host: "localhost"
