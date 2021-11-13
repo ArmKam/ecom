@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Twig\Environment;
+use App\Taxes\Detector;
 use App\Taxes\Calculator;
 use Cocur\Slugify\Slugify;
 use Psr\Log\LoggerInterface;
@@ -28,8 +29,13 @@ class HelloController
     /**
      * @Route("/hello/{prenom<[a-zA-Z]+>?World}",  name="hello")
      */
-    public function hello(LoggerInterface $logger, Slugify $slugify, $prenom, Environment $twig)
+    public function hello(LoggerInterface $logger, Slugify $slugify, $prenom, Environment $twig, Detector $detecteur)
     {
+
+
+        dump($detecteur->detect(101));
+        dump($detecteur->detect(10));
+
 
         // $slugify  = new Slugify();
 
