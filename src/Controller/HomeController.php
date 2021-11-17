@@ -12,7 +12,7 @@ class HomeController extends AbstractController
 {
 
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="homepage")
      */
     public function homepage(ProductRepository $productRepository)
     {
