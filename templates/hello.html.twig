@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<h1>Hell
+		{{prenom}}
+		!</h1>
+
+	{# <h1>nos formateurs</h1>
+			{% set formateur = formateur1 %}
+			{% include "_formateur.html.twig" %} #}
+{# {% include "_formateur.html.twig" with {"formateur": formateur1} %} #}
+	{# {% include "_formateur.html.twig" with {"formateur": formateur2} %}
+		{% endblock %} #}
+
+
+{% endblock %}
+{% block title %}
+	Hello
+	{{prenom}}
+{% endblock %}
